@@ -71,17 +71,22 @@ val value = stringSetPreference.get() ?: emptySet()
 You can also extend the classes like this:
 
 ```kotlin
-interface CustomBooleanPreference: BooleanPreference
+interface CustomBooleanPreference : BooleanPreference
 
 class CustomBooleanPreferenceImpl(
     context: Context
-): BooleanPreferenceImpl(context, NAME) {
+) : BooleanPreferenceImpl(context, NAME) {
 
     private companion object {
         private const val NAME = "custom_name"
     }
 }
 ```
+
+## TODO
+
+- Add tests
+- Add generic objects support
 
 ## Credits
 
