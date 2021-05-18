@@ -13,7 +13,7 @@ A small library that helps you to store typed preferences in `SharedPreferences`
 Add dependency to your module's (usually `app/build.gradle`) `build.gradle` and sync:
 
 ```groovy
-implementation 'pro.labster.typedpreferences:(insert latest version)'
+implementation 'pro.labster:typedpreferences:(insert latest version)'
 ```
 
 ## Usage
