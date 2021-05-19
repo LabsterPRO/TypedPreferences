@@ -16,12 +16,12 @@ abstract class BasePreferenceImpl<T>(
 
     protected val sharedPreferences: SharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE)
 
-    protected fun getKey(): String = KEY
+    protected val key: String = KEY
 
     override fun delete() {
         sharedPreferences
             .edit()
-            .remove(getKey())
+            .remove(key)
             .apply()
     }
 

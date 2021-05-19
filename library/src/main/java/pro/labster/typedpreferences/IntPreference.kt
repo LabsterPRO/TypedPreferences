@@ -10,8 +10,8 @@ open class IntPreferenceImpl(
 ) : BasePreferenceImpl<Int>(context, name), IntPreference {
 
     override fun get(): Int? {
-        return if (sharedPreferences.contains(name)) {
-            sharedPreferences.getInt(getKey(), DEFAULT_VALUE)
+        return if (sharedPreferences.contains(key)) {
+            sharedPreferences.getInt(key, DEFAULT_VALUE)
         } else {
             null
         }
@@ -20,7 +20,7 @@ open class IntPreferenceImpl(
     override fun put(value: Int) {
         sharedPreferences
             .edit()
-            .putInt(getKey(), value)
+            .putInt(key, value)
             .apply()
     }
 

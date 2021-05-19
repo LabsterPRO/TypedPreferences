@@ -10,8 +10,8 @@ open class LongPreferenceImpl(
 ) : BasePreferenceImpl<Long>(context, name), LongPreference {
 
     override fun get(): Long? {
-        return if (sharedPreferences.contains(name)) {
-            sharedPreferences.getLong(getKey(), DEFAULT_VALUE)
+        return if (sharedPreferences.contains(key)) {
+            sharedPreferences.getLong(key, DEFAULT_VALUE)
         } else {
             null
         }
@@ -20,7 +20,7 @@ open class LongPreferenceImpl(
     override fun put(value: Long) {
         sharedPreferences
             .edit()
-            .putLong(getKey(), value)
+            .putLong(key, value)
             .apply()
     }
 

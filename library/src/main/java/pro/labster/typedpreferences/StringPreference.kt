@@ -10,8 +10,8 @@ open class StringPreferenceImpl(
 ) : BasePreferenceImpl<String>(context, name), StringPreference {
 
     override fun get(): String? {
-        return if (sharedPreferences.contains(name)) {
-            sharedPreferences.getString(getKey(), DEFAULT_VALUE)
+        return if (sharedPreferences.contains(key)) {
+            sharedPreferences.getString(key, DEFAULT_VALUE)
         } else {
             null
         }
@@ -20,7 +20,7 @@ open class StringPreferenceImpl(
     override fun put(value: String) {
         sharedPreferences
             .edit()
-            .putString(getKey(), value)
+            .putString(key, value)
             .apply()
     }
 

@@ -10,8 +10,8 @@ open class BooleanPreferenceImpl(
 ) : BasePreferenceImpl<Boolean>(context, name), BooleanPreference {
 
     override fun get(): Boolean? {
-        return if (sharedPreferences.contains(name)) {
-            sharedPreferences.getBoolean(getKey(), DEFAULT_VALUE)
+        return if (sharedPreferences.contains(key)) {
+            sharedPreferences.getBoolean(key, DEFAULT_VALUE)
         } else {
             null
         }
@@ -20,7 +20,7 @@ open class BooleanPreferenceImpl(
     override fun put(value: Boolean) {
         sharedPreferences
             .edit()
-            .putBoolean(getKey(), value)
+            .putBoolean(key, value)
             .apply()
     }
 

@@ -10,8 +10,8 @@ open class FloatPreferenceImpl(
 ) : BasePreferenceImpl<Float>(context, name), FloatPreference {
 
     override fun get(): Float? {
-        return if (sharedPreferences.contains(name)) {
-            sharedPreferences.getFloat(getKey(), DEFAULT_VALUE)
+        return if (sharedPreferences.contains(key)) {
+            sharedPreferences.getFloat(key, DEFAULT_VALUE)
         } else {
             null
         }
@@ -20,7 +20,7 @@ open class FloatPreferenceImpl(
     override fun put(value: Float) {
         sharedPreferences
             .edit()
-            .putFloat(getKey(), value)
+            .putFloat(key, value)
             .apply()
     }
 

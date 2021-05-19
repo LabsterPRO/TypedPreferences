@@ -10,8 +10,8 @@ open class StringSetPreferenceImpl(
 ) : BasePreferenceImpl<Set<String>>(context, name), StringSetPreference {
 
     override fun get(): Set<String>? {
-        return if (sharedPreferences.contains(name)) {
-            sharedPreferences.getStringSet(getKey(), DEFAULT_VALUE)
+        return if (sharedPreferences.contains(key)) {
+            sharedPreferences.getStringSet(key, DEFAULT_VALUE)
         } else {
             null
         }
@@ -20,7 +20,7 @@ open class StringSetPreferenceImpl(
     override fun put(value: Set<String>) {
         sharedPreferences
             .edit()
-            .putStringSet(getKey(), value)
+            .putStringSet(key, value)
             .apply()
     }
 
